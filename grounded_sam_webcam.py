@@ -5,6 +5,7 @@ import copy
 import numpy as np
 import json
 import torch
+import time
 from PIL import Image, ImageDraw, ImageFont
 
 # Grounding DINO
@@ -20,6 +21,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 from torchvision import transforms
+
 
 def load_image(image_cv):
     # load image
@@ -120,13 +122,15 @@ if __name__ == "__main__":
     predictor = SamPredictor(build_sam(checkpoint=sam_checkpoint).to(device))
     
     # webcam 
-    cam = cv2.VideoCapture(4)
+    cam = cv2.VideoCapture(0)
     
     while True:
         ret_val, img = cam.read()
+        start_time = time.time()
         if(ret_val):
-
+            print("img.shpe",img.shape)
             image_pil,image = load_image(img)
+            
             # run grounding dino model
             boxes_filt, pred_phrases = get_grounding_output(
                 model, image, text_prompt, box_threshold, text_threshold, device=device
@@ -137,7 +141,6 @@ if __name__ == "__main__":
             size = image_pil.shape[:2]
         
             W , H = size[1], size[0]
-            print(H,W)
             for i in range(boxes_filt.size(0)):
                 boxes_filt[i] = boxes_filt[i] * torch.Tensor([W, H, W, H])
                 boxes_filt[i][:2] -= boxes_filt[i][2:] / 2
@@ -158,8 +161,6 @@ if __name__ == "__main__":
                 for box, label in zip(boxes_filt, pred_phrases):
                     x0, y0 = box.numpy()[0], box.numpy()[1]
                     w, h = box.numpy()[2] - box.numpy()[0], box.numpy()[3] - box.numpy()[1]
-                    print('---------------------------------------------')
-                    print(x0,y0,w,h)
                     cv2.rectangle(img, (int(x0), int(y0)), (int(x0+w), int(y0+h)), (0, 255, 0), 2)
                 
                 for mask in masks:
@@ -174,6 +175,7 @@ if __name__ == "__main__":
                 
                 cv2.imshow('Result', img)
                 cv2.waitKey(1)
+                print("whole time: ", time.time() - start_time)
                 # # draw output image
                 # plt.figure(figsize=(10, 10))
                 # plt.imshow(image_cv)
