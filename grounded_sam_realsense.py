@@ -153,13 +153,13 @@ def callback(img_msg1, img_msg2):
                 z = depth_img[x, y]
                 # print("x,y,z: ",x,y,z)
                 point_z = float(z) /1000
-                point_x = (x - 323.0873107910156) * point_z / 604.033447265625
-                point_y = (y - 243.3673706054687) * point_z / 604.033447265625
-                points = np.append(points, [[point_x, point_y, point_z]], axis=0)
+                point_x = (x - 243.3673706054687) * point_z / 602.033447265625
+                point_y = (y - 323.0873107910156) * point_z / 604.033447265625
+                points = np.append(points, [[point_y,point_x, point_z]], axis=0)
         points = np.delete(points, 0, 0)
         header = Header()
         header.stamp = rospy.Time.now()
-        header.frame_id = "base_link"    
+        header.frame_id = "camera_depth_optical_frame"    
         msg = PointCloud2()
         msg.header = header
         msg.height = 1
