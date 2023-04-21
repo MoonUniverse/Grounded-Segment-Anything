@@ -1,7 +1,7 @@
 ![](./assets/Grounded-SAM_logo.png)
 
 # Grounded-Segment-Anything
-[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/watch?v=GuEDDBWrN24&t=521s) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/camenduru/grounded-segment-anything-colab) [![HuggingFace Space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)](https://huggingface.co/spaces/IDEA-Research/Grounded-SAM) [![ModelScope Official Demo](https://img.shields.io/badge/ModelScope-Official%20Demo-important)](https://modelscope.cn/studios/tuofeilunhifi/Grounded-Segment-Anything/summary) [![Huggingface Demo by Community](https://img.shields.io/badge/Huggingface-Demo%20by%20Community-red)](https://huggingface.co/spaces/yizhangliu/Grounded-Segment-Anything) [![Stable-Diffusion WebUI](https://img.shields.io/badge/Stable--Diffusion-WebUI%20by%20Community-critical)](https://github.com/continue-revolution/sd-webui-segment-anything) [![Jupyter Notebook Demo](https://img.shields.io/badge/Demo-Jupyter%20Notebook-informational)](./grounded_sam.ipynb)
+[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/oEQYStnF2l8) [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/automated-dataset-annotation-and-evaluation-with-grounding-dino-and-sam.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/camenduru/grounded-segment-anything-colab) [![HuggingFace Space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)](https://huggingface.co/spaces/IDEA-Research/Grounded-SAM) [![ModelScope Official Demo](https://img.shields.io/badge/ModelScope-Official%20Demo-important)](https://modelscope.cn/studios/tuofeilunhifi/Grounded-Segment-Anything/summary) [![Huggingface Demo by Community](https://img.shields.io/badge/Huggingface-Demo%20by%20Community-red)](https://huggingface.co/spaces/yizhangliu/Grounded-Segment-Anything) [![Stable-Diffusion WebUI](https://img.shields.io/badge/Stable--Diffusion-WebUI%20by%20Community-critical)](https://github.com/continue-revolution/sd-webui-segment-anything) [![Jupyter Notebook Demo](https://img.shields.io/badge/Demo-Jupyter%20Notebook-informational)](./grounded_sam.ipynb)
 
 We plan to create a very interesting demo by combining [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO) and [Segment Anything](https://github.com/facebookresearch/segment-anything) which aims to detect and segment Anything with text inputs! And we will continue to improve it and create more interesting demos based on this foundation.
 
@@ -16,6 +16,8 @@ The **core idea** behind this project is to **combine the strengths of different
 - [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO) is a strong zero-shot detector which is capable of to generate high quality boxes and labels with free-form text. 
 - [OSX](https://osx-ubody.github.io/) is a strong and efficient one-stage motion capture method to generate high quality 3D human mesh from monucular image. We also release a large-scale upper-body dataset UBody for a more accurate reconstrution in the upper-body scene.
 - [Stable-Diffusion](https://github.com/CompVis/stable-diffusion) is an amazing strong text-to-image diffusion model.
+- [Tag2Text](https://github.com/xinyu1205/Tag2Text) is an efficient and controllable vision-language model which can
+simultaneously output superior image captioning and image tagging.
 - [BLIP](https://github.com/salesforce/lavis) is a wonderful language-vision model for image understanding.
 - [Visual ChatGPT](https://github.com/microsoft/visual-chatgpt) is a wonderful tool that connects ChatGPT and a series of Visual Foundation Models to enable sending and receiving images during chatting.
 - [VoxelNeXt](https://github.com/dvlab-research/VoxelNeXt) is a clean, simple, and fully-sparse 3D object detector, which predicts objects directly upon sparse voxel features.
@@ -23,6 +25,7 @@ The **core idea** behind this project is to **combine the strengths of different
 
 **🔥 Highlighted Projects** 
 
+- Checkout the [Automated Dataset Annotation and Evaluation with GroundingDINO and SAM](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/automated-dataset-annotation-and-evaluation-with-grounding-dino-and-sam.ipynb) which is an amazing tutorial on automatic labeling! Thanks a lot for [Piotr Skalski](https://github.com/SkalskiP) and [Robotflow](https://github.com/roboflow/notebooks)!
 - Checkout the [Segment Everything Everywhere All at Once](https://github.com/UX-Decoder/Segment-Everything-Everywhere-All-At-Once) demo! It supports segmenting with various types of prompts (text, point, scribble, referring image, etc.) and any combination of prompts.
 - Checkout the [OpenSeeD](https://github.com/IDEA-Research/OpenSeeD) for the interactive segmentation with box input to generate mask.
 - Visual instruction tuning with GPT-4! Please check out the multimodal model **LLaVA**: [[Project Page](https://llava-vl.github.io/)] [[Paper](https://arxiv.org/abs/2304.08485)] [[Demo](https://llava.hliu.cc/)]  [[Data](https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K)] [[Model](https://huggingface.co/liuhaotian/LLaVA-13b-delta-v0)]
@@ -35,6 +38,7 @@ The **core idea** behind this project is to **combine the strengths of different
 - [GroundingDINO + Segment-Anything: Detect and Segment Everything with Text Prompt](#runningman-run-grounded-segment-anything-demo)
 - [GroundingDINO + Segment-Anything + Stable-Diffusion: Detect, Segment and Generate Anything with Text Prompts](#skier-run-grounded-segment-anything--inpainting-demo)
 - [Grounded-SAM + Stable-Diffusion Gradio APP](#golfing-run-grounded-segment-anything--inpainting-gradio-app)
+- [Grounded-SAM + Tag2Text: Automatically Labeling System with Superior Image Tagging!](#label-run-grounded-segment-anything--tag2text-demo)
 - [Grounded-SAM + BLIP: Automatically Labeling System!](#robot-run-grounded-segment-anything--blip-demo)
 - [Whisper + Grounded-SAM: Detect and Segment Everything with Speech!](#openmouth-run-grounded-segment-anything--whisper-demo)
 - [Grounded-SAM + Visual ChatGPT: Automatically Label & Generate Everything with ChatBot!](#speechballoon-run-chatbot-demo)
@@ -61,6 +65,14 @@ https://user-images.githubusercontent.com/24236723/231955561-2ae4ec1a-c75f-4cc5-
 
 **🔥 Grounded-SAM + Stable-Diffusion Inpainting: Data-Factory, Generating New Data**
 ![](./assets/grounded_sam_inpainting_demo.png)
+
+
+**🔥 Tag2Text + Grounded-SAM: Automatic Label System with Superior Image Tagging**
+
+Using Tag2Text to directly generate tags, and using Grounded-SAM for box and mask generating. Tag2Text has superior tagging and captioning capabilities. Here's the demo output comparison:
+
+![](./assets/automatic_label_output/demo9_tag2text.jpg)
+
 
 **🔥 BLIP + Grounded-SAM: Automatic Label System**
 
@@ -147,6 +159,12 @@ xhost +
 
 
 ### Install without Docker
+You should set the environment variable manually as follows if you want to build a local GPU environment for Grounded-SAM:
+```bash
+export AM_I_DOCKER=False
+export BUILD_WITH_CUDA=True
+export CUDA_HOME=/path/to/cuda-11.3/
+```
 
 Install Segment Anything:
 
@@ -172,6 +190,13 @@ Install osx:
 ```bash
 git submodule update --init --recursive
 cd grounded-sam-osx && bash install.sh
+```
+
+Install Tag2Text:
+
+```bash
+git submodule update --init --recursive
+cd Tag2Text && pip install -r requirements.txt
 ```
 
 The following optional dependencies are necessary for mask post-processing, saving masks in COCO format, the example notebooks, and exporting the model in ONNX format. `jupyter` is also required to run the example notebooks.
@@ -257,6 +282,13 @@ python grounded_sam_inpainting_demo.py \
 ```
 
 ## :golfing: Run Grounded-Segment-Anything + Inpainting Gradio APP
+The following introduces the 6 task_type modes provided by Gradio APP:
+1. **scribble**: Segmentation is achieved through Segment Anything and mouse click interaction (you need to click on the object with the mouse, no need to specify the prompt).
+2. **automask**: Segment the entire image at once through Segment Anything (no need to specify a prompt).
+3. **det**: Realize detection through Grounding DINO and text interaction (text prompt needs to be specified).
+4. **seg**: Realize text interaction by combining Grounding DINO and Segment Anything to realize detection + segmentation (need to specify text prompt).
+5. **inpainting**: By combining Grounding DINO + Segment Anything + Stable Diffusion to achieve text exchange and replace the target object (need to specify text prompt and inpaint prompt) .
+6. **automatic**: By combining BLIP + Grounding DINO + Segment Anything to achieve non-interactive detection + segmentation (no need to specify prompt).
 
 ```bash
 python gradio_app.py
@@ -267,6 +299,41 @@ python gradio_app.py
 ![](./assets/gradio_demo.png)
 
 
+## :label: Run Grounded-Segment-Anything + Tag2Text Demo
+Tag2Text achieves superior image tag recognition ability of [**3,429**](https://github.com/xinyu1205/Tag2Text/blob/main/data/tag_list.txt) commonly human-used categories.
+It is seamlessly linked to generate pseudo labels automatically as follows:
+1. Use Tag2Text to generate tags.
+2. Use Grounded-Segment-Anything to generate the boxes and masks.
+
+- Download the checkpoint for Tag2Text:
+```bash
+cd Tag2Text
+
+wget https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin_14m.pth
+```
+
+- Run Demo
+```bash
+export CUDA_VISIBLE_DEVICES=0
+python automatic_label_tag2text_demo.py \
+  --config GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py \
+  --tag2text_checkpoint tag2text_swin_14m.pth \
+  --grounded_checkpoint groundingdino_swint_ogc.pth \
+  --sam_checkpoint sam_vit_h_4b8939.pth \
+  --input_image assets/demo9.jpg \
+  --output_dir "outputs" \
+  --box_threshold 0.25 \
+  --text_threshold 0.2 \
+  --iou_threshold 0.5 \
+  --device "cuda"
+```
+
+- Tag2Text also provides powerful captioning capabilities, and the process with captions can refer to [BLIP](#robot-run-grounded-segment-anything--blip-demo).
+- The pseudo labels and model prediction visualization will be saved in `output_dir` as follows (right figure):
+
+![](./assets/automatic_label_output/demo9_tag2text.jpg)
+
+
 ## :robot: Run Grounded-Segment-Anything + BLIP Demo
 It is easy to generate pseudo labels automatically as follows:
 1. Use BLIP (or other caption models) to generate a caption.
@@ -275,6 +342,8 @@ It is easy to generate pseudo labels automatically as follows:
 
 - Run Demo
 ```bash
+export OPENAI_API_KEY=your_openai_key
+export OPENAI_API_BASE=https://closeai.deno.dev/v1
 export CUDA_VISIBLE_DEVICES=0
 python automatic_label_demo.py \
   --config GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py \
@@ -282,7 +351,7 @@ python automatic_label_demo.py \
   --sam_checkpoint sam_vit_h_4b8939.pth \
   --input_image assets/demo3.jpg \
   --output_dir "outputs" \
-  --openai_key your_openai_key \
+  --openai_key $OPENAI_API_KEY \
   --box_threshold 0.25 \
   --text_threshold 0.2 \
   --iou_threshold 0.5 \
@@ -337,9 +406,10 @@ You can enable chatgpt to help you automatically detect the object and inpaintin
 Or you can specify the object you want to inpaint [stored in `args.det_speech_file`] and the text you want to inpaint with [stored in `args.inpaint_speech_file`].
 
 ```bash
+export OPENAI_API_KEY=your_openai_key
+export OPENAI_API_BASE=https://closeai.deno.dev/v1
 # Example: enable chatgpt
 export CUDA_VISIBLE_DEVICES=0
-export OPENAI_KEY=your_openai_key
 python grounded_sam_whisper_inpainting_demo.py \
   --config GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py \
   --grounded_checkpoint groundingdino_swint_ogc.pth \
@@ -350,7 +420,7 @@ python grounded_sam_whisper_inpainting_demo.py \
   --text_threshold 0.25 \
   --prompt_speech_file assets/acoustics/prompt_speech_file.mp3 \
   --enable_chatgpt \
-  --openai_key $OPENAI_KEY \
+  --openai_key $OPENAI_API_KEY\
   --device "cuda"
 ```
 
@@ -386,6 +456,8 @@ To use the ChatBot:
 - Set the default model setting in the tool `Grounded_dino_sam_inpainting`.
 - Run Demo
 ```bash
+export OPENAI_API_KEY=your_openai_key
+export OPENAI_API_BASE=https://closeai.deno.dev/v1
 export CUDA_VISIBLE_DEVICES=0
 python chatbot.py 
 ```
@@ -456,6 +528,16 @@ python grounded_sam_visam.py \
 
 - [Segment Anything](https://github.com/facebookresearch/segment-anything)
 - [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO)
+
+
+## Contributors
+
+Our project wouldn't be possible without the contributions of these amazing people! Thank you all for making this project better.
+
+<a href="https://github.com/IDEA-Research/Grounded-Segment-Anything/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=IDEA-Research/Grounded-Segment-Anything" />
+</a>
+
 
 ## Citation
 If you find this project helpful for your research, please consider citing the following BibTeX entry.
