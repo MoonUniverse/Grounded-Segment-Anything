@@ -1,7 +1,8 @@
 ![](./assets/Grounded-SAM_logo.png)
 
 # Grounded-Segment-Anything
-[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/oEQYStnF2l8) [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/automated-dataset-annotation-and-evaluation-with-grounding-dino-and-sam.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/camenduru/grounded-segment-anything-colab) [![HuggingFace Space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)](https://huggingface.co/spaces/IDEA-Research/Grounded-SAM) [![ModelScope Official Demo](https://img.shields.io/badge/ModelScope-Official%20Demo-important)](https://modelscope.cn/studios/tuofeilunhifi/Grounded-Segment-Anything/summary) [![Huggingface Demo by Community](https://img.shields.io/badge/Huggingface-Demo%20by%20Community-red)](https://huggingface.co/spaces/yizhangliu/Grounded-Segment-Anything) [![Stable-Diffusion WebUI](https://img.shields.io/badge/Stable--Diffusion-WebUI%20by%20Community-critical)](https://github.com/continue-revolution/sd-webui-segment-anything) [![Jupyter Notebook Demo](https://img.shields.io/badge/Demo-Jupyter%20Notebook-informational)](./grounded_sam.ipynb)
+[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://youtu.be/oEQYStnF2l8) [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/automated-dataset-annotation-and-evaluation-with-grounding-dino-and-sam.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/camenduru/grounded-segment-anything-colab) [![HuggingFace Space](https://img.shields.io/badge/🤗-HuggingFace%20Space-cyan.svg)](https://huggingface.co/spaces/IDEA-Research/Grounded-SAM) [![Replicate](https://replicate.com/cjwbw/grounded-recognize-anything/badge)](https://replicate.com/cjwbw/grounded-recognize-anything)  [![ModelScope Official Demo](https://img.shields.io/badge/ModelScope-Official%20Demo-important)](https://modelscope.cn/studios/tuofeilunhifi/Grounded-Segment-Anything/summary) [![Huggingface Demo by Community](https://img.shields.io/badge/Huggingface-Demo%20by%20Community-red)](https://huggingface.co/spaces/yizhangliu/Grounded-Segment-Anything) [![Stable-Diffusion WebUI](https://img.shields.io/badge/Stable--Diffusion-WebUI%20by%20Community-critical)](https://github.com/continue-revolution/sd-webui-segment-anything) [![Jupyter Notebook Demo](https://img.shields.io/badge/Demo-Jupyter%20Notebook-informational)](./grounded_sam.ipynb)
+
 
 We plan to create a very interesting demo by combining [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO) and [Segment Anything](https://github.com/facebookresearch/segment-anything) which aims to detect and segment Anything with text inputs! And we will continue to improve it and create more interesting demos based on this foundation.
 
@@ -9,16 +10,23 @@ We are very willing to **help everyone share and promote new projects** based on
 
 ![](./assets/grounded_sam_new_demo_image.png)
 
+![](./assets/ram_grounded_sam_new.png)
+
 **🍄 Why Building this Project?**
 
 The **core idea** behind this project is to **combine the strengths of different models in order to build a very powerful pipeline for solving complex problems**. And it's worth mentioning that this is a workflow for combining strong expert models, where **all parts can be used separately or in combination, and can be replaced with any similar but different models (like replacing Grounding DINO with GLIP or other detectors / replacing Stable-Diffusion with ControlNet or GLIGEN/ Combining with ChatGPT)**.
 
 **🍇 Updates**
-- **`2023/05/11`**: We decide to share more interesting demo with AIGC and  release some tested DeepFloyd demo and Notes in [inpaint_playground/DeepFloyd](./inpaint_playground/DeepFloyd/). And we're going to build a cleaner README for the users recently.
-- **`2023/05/05`**: Release a simpler code for automatic labeling (combined with Tag2Text model): please see [automatic_label_simple_demo.py](./automatic_label_simple_demo.py)
-- **`2023/05/03`**: Checkout the [Automated Dataset Annotation and Evaluation with GroundingDINO and SAM](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/automated-dataset-annotation-and-evaluation-with-grounding-dino-and-sam.ipynb) which is an amazing tutorial on automatic labeling! Thanks a lot for [Piotr Skalski](https://github.com/SkalskiP) and [Robotflow](https://github.com/roboflow/notebooks)!
-- **`2023/05/02`**: Release a better python API for GroundingDINO (annotate image less than 20 lines of code): please see [grounding_dino_demo.py](./grounding_dino_demo.py)
-- **`2023/05/02`**: Release a more simple and elegant code for Grounded-SAM demo: please see [grounded_sam_simple_demo.py](./grounded_sam_simple_demo.py) 
+- **`2023/06/24`** Combining Grounding-DINO with [FastSAM](https://github.com/CASIA-IVA-Lab/FastSAM) in [Grounded-FastSAM](./FastSAM/) for faster annotating.
+- **`2023/06/20`** By combining **Grounding-DINO-L** with **SAM-ViT-H**, Grounded-SAM has won **the first place** in [Segmentation in the Wild](https://eval.ai/web/challenges/challenge-page/1931/overview) competition zero-shot track on [CVPR 2023 workshop](https://computer-vision-in-the-wild.github.io/cvpr-2023/), surpassing the second place about **4 mAP**.
+- **`2023/06/16`** Release [RAM-Grounded-SAM Replicate Online Demo](https://replicate.com/cjwbw/ram-grounded-sam). Thanks a lot to [Chenxi](https://chenxwh.github.io/) for providing this nice demo 🌹.
+- **`2023/06/14`** Support [RAM-Grounded-SAM & SAM-HQ](./automatic_label_ram_demo.py) and update [Simple Automatic Label Demo](./automatic_label_ram_demo.py) to support [RAM](https://github.com/xinyu1205/Recognize_Anything-Tag2Text), setting up a strong automatic annotation pipeline.
+- **`2023/06/13`** Checkout the [Autodistill: Train YOLOv8 with ZERO Annotations](https://youtu.be/gKTYMfwPo4M) tutorial to learn how to use Grounded-SAM + [Autodistill](https://github.com/autodistill/autodistill) for automated data labeling and real-time model training.
+- **`2023/06/13`** Support [SAM-HQ](https://github.com/SysCV/sam-hq) in [Grounded-SAM Demo](#running_man-grounded-sam-detect-and-segment-everything-with-text-prompt) for higher quality prediction.
+- **`2023/06/12`** Support [RAM-Grounded-SAM](#label-grounded-sam-with-ram-or-tag2text-for-automatic-labeling) for strong automatic labeling pipeline! Thanks for [Recognize-Anything](https://github.com/xinyu1205/Recognize_Anything-Tag2Text).
+- **`2023/06/01`** Our Grounded-SAM has been accepted to present a **demo** at [ICCV 2023](https://iccv2023.thecvf.com/)! See you in Paris!
+- **`2023/05/23`**: Support `Image-Referring-Segment`, `Audio-Referring-Segment` and `Text-Referring-Segment` in [ImageBind-SAM](./playground/ImageBind_SAM/).
+- **`2023/05/03`**: Checkout the [Automated Dataset Annotation and Evaluation with GroundingDINO and SAM](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/automated-dataset-annotation-and-evaluation-with-grounding-dino-and-sam.ipynb) which is an amazing tutorial on automatic labeling! Thanks a lot for [Piotr Skalski](https://github.com/SkalskiP) and [Roboflow](https://github.com/roboflow/notebooks)!
 
 
 ## Table of Contents
@@ -34,7 +42,7 @@ The **core idea** behind this project is to **combine the strengths of different
   - [Grounded-SAM: Detect and Segment Everything with Text Prompt](#running_man-grounded-sam-detect-and-segment-everything-with-text-prompt)
   - [Grounded-SAM with Inpainting: Detect, Segment and Generate Everything with Text Prompt](#skier-grounded-sam-with-inpainting-detect-segment-and-generate-everything-with-text-prompt)
   - [Grounded-SAM and Inpaint Gradio APP](#golfing-grounded-sam-and-inpaint-gradio-app)
-  - [Grounded-SAM with Tag2Text for Automatic Labeling](#label-grounded-sam-with-tag2text-for-automatic-labeling)
+  - [Grounded-SAM with RAM or Tag2Text for Automatic Labeling](#label-grounded-sam-with-ram-or-tag2text-for-automatic-labeling)
   - [Grounded-SAM with BLIP & ChatGPT for Automatic Labeling](#robot-grounded-sam-with-blip-for-automatic-labeling)
   - [Grounded-SAM with Whisper: Detect and Segment Anything with Audio](#open_mouth-grounded-sam-with-whisper-detect-and-segment-anything-with-audio)
   - [Grounded-SAM ChatBot with Visual ChatGPT](#speech_balloon-grounded-sam-chatbot-demo)
@@ -43,6 +51,13 @@ The **core idea** behind this project is to **combine the strengths of different
   - [Interactive Fashion-Edit Playground: Click for Segmentation And Editing](#dancers-interactive-editing)
   - [Interactive Human-face Editing Playground: Click And Editing Human Face](#dancers-interactive-editing)
   - [3D Box Via Segment Anything](#camera-3d-box-via-segment-anything)
+  - [Playground: More Interesting and Imaginative Demos with Grounded-SAM](./playground/)
+    - [DeepFloyd: Image Generation with Text Prompt](./playground/DeepFloyd/)
+    - [PaintByExample: Exemplar-based Image Editing with Diffusion Models](./playground/PaintByExample/)
+    - [LaMa: Resolution-robust Large Mask Inpainting with Fourier Convolutions](./playground/LaMa/)
+    - [RePaint: Inpainting using Denoising Diffusion Probabilistic Models](./playground/RePaint/)
+    - [ImageBind with SAM: Segment with Different Modalities](./playground/ImageBind_SAM/)
+  - [Grounded-FastSAM for faster labelling](./FastSAM/)
 
 
 ## Preliminary Works
@@ -57,9 +72,10 @@ Here we provide some background knowledge that you may need to know before tryin
 | [Grounding DINO](https://arxiv.org/abs/2303.05499) | ![](https://github.com/IDEA-Research/GroundingDINO/blob/main/.asset/hero_figure.png?raw=True) | A strong zero-shot detector which is capable of to generate high quality boxes and labels with free-form text. | [[Github](https://github.com/IDEA-Research/GroundingDINO)] <br> [[Demo](https://huggingface.co/spaces/ShilongLiu/Grounding_DINO_demo)] |
 | [OSX](http://arxiv.org/abs/2303.16160) | ![](https://github.com/IDEA-Research/OSX/blob/main/assets/demo_video.gif?raw=True) | A strong and efficient one-stage motion capture method to generate high quality 3D human mesh from monucular image. OSX also releases a large-scale upper-body dataset UBody for a more accurate reconstrution in the upper-body scene. | [[Github](https://github.com/IDEA-Research/OSX)] <br> [[Page](https://osx-ubody.github.io/)] <br> [[Video](https://osx-ubody.github.io/)] <br> [[Data](https://docs.google.com/forms/d/e/1FAIpQLSehgBP7wdn_XznGAM2AiJPiPLTqXXHw5uX9l7qeQ1Dh9HoO_A/viewform)] |
 | [Stable-Diffusion](https://arxiv.org/abs/2112.10752) | ![](https://github.com/CompVis/stable-diffusion/blob/main/assets/stable-samples/txt2img/merged-0006.png?raw=True) | A super powerful open-source latent text-to-image diffusion model | [[Github](https://github.com/CompVis/stable-diffusion)] <br> [[Page](https://ommer-lab.com/research/latent-diffusion-models/)] |
+| [RAM](https://recognize-anything.github.io/) | ![](https://github.com/xinyu1205/Tag2Text/raw/main/images/localization_and_recognition.jpg) | RAM is an image tagging model, which can recognize any common category with high accuracy. | [[Github](https://github.com/xinyu1205/Recognize_Anything-Tag2Text)] <br> [[Demo](https://huggingface.co/spaces/xinyu1205/Recognize_Anything-Tag2Text)] |
 | [BLIP](https://arxiv.org/abs/2201.12086) | ![](https://github.com/salesforce/LAVIS/raw/main/docs/_static/logo_final.png) | A wonderful language-vision model for image understanding. | [[GitHub](https://github.com/salesforce/LAVIS)] |
 | [Visual ChatGPT](https://arxiv.org/abs/2303.04671) | ![](https://github.com/microsoft/TaskMatrix/raw/main/assets/figure.jpg) | A wonderful tool that connects ChatGPT and a series of Visual Foundation Models to enable sending and receiving images during chatting. | [[Github](https://github.com/microsoft/TaskMatrix)] <br> [[Demo](https://huggingface.co/spaces/microsoft/visual_chatgpt)] |
-| [Tag2Text](https://arxiv.org/abs/2303.05657) | ![](https://github.com/xinyu1205/Tag2Text/raw/main/images/tag2text_framework.png) | An efficient and controllable vision-language model which can simultaneously output superior image captioning and image tagging. | [[Github](https://github.com/xinyu1205/Tag2Text)] <br> [[Demo](https://huggingface.co/spaces/xinyu1205/Tag2Text)] |
+| [Tag2Text](https://tag2text.github.io/) | ![](https://github.com/xinyu1205/Tag2Text/raw/main/images/tag2text_framework.png) | An efficient and controllable vision-language model which can simultaneously output superior image captioning and image tagging. | [[Github](https://github.com/xinyu1205/Tag2Text)] <br> [[Demo](https://huggingface.co/spaces/xinyu1205/Tag2Text)] |
 | [VoxelNeXt](https://arxiv.org/abs/2303.11301) | ![](https://github.com/dvlab-research/VoxelNeXt/raw/master/docs/sequence-v2.gif) | A clean, simple, and fully-sparse 3D object detector, which predicts objects directly upon sparse voxel features. | [[Github](https://github.com/dvlab-research/VoxelNeXt)] 
 
 </div>
@@ -105,6 +121,7 @@ We also list some awesome segment-anything extension projects here you may find 
 - [Expediting SAM without Fine-tuning](https://github.com/Expedit-LargeScale-Vision-Transformer/Expedit-SAM) by Weicong Liang and Yuhui Yuan
 - [Semantic Segment Anything: Providing Rich Sementic Category Annotations for SAM](https://github.com/fudan-zvg/Semantic-Segment-Anything) by Jiaqi Chen and Zeyu Yang and Li Zhang
 - [Enhance Everything: Combining SAM with Image Restoration and Enhancement Tasks](https://github.com/lixinustc/Enhance-Anything) by Xin Li
+- [DragGAN](https://github.com/Zeqiang-Lai/DragGAN) by Shanghai AI Lab.
 
 ## Installation
 The code requires `python>=3.8`, as well as `pytorch>=1.7` and `torchvision>=0.8`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
@@ -164,7 +181,7 @@ git submodule update --init --recursive
 cd grounded-sam-osx && bash install.sh
 ```
 
-Install Tag2Text:
+Install RAM & Tag2Text:
 
 ```bash
 git submodule update --init --recursive
@@ -301,7 +318,42 @@ The annotated results will be saved in `./outputs` as follows
 
 </div>
 
-**Step 3: Runing the updated grounded-sam demo (optional)**
+**Step 3: Runing grounded-sam demo with sam-hq**
+- Download the demo image
+```bash
+wget https://github.com/IDEA-Research/detrex-storage/releases/download/grounded-sam-storage/sam_hq_demo_image.png
+```
+
+- Download SAM-HQ checkpoint [here](https://github.com/SysCV/sam-hq#model-checkpoints)
+
+- Running grounded-sam-hq demo as follows:
+```python
+export CUDA_VISIBLE_DEVICES=0
+python grounded_sam_demo.py \
+  --config GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py \
+  --grounded_checkpoint groundingdino_swint_ogc.pth \
+  --sam_hq_checkpoint ./sam_hq_vit_h.pth \  # path to sam-hq checkpoint
+  --use_sam_hq \  # set to use sam-hq model
+  --input_image sam_hq_demo_image.png \
+  --output_dir "outputs" \
+  --box_threshold 0.3 \
+  --text_threshold 0.25 \
+  --text_prompt "chair." \
+  --device "cuda"
+```
+
+The annotated results will be saved in `./outputs` as follows
+
+<div align="center">
+
+| Input Image | SAM Output | SAM-HQ Output |
+|:----:|:----:|:----:|
+| ![](https://github.com/IDEA-Research/detrex-storage/blob/main/assets/grounded_sam/sam_hq/sam_hq_demo.png?raw=true) | ![](https://github.com/IDEA-Research/detrex-storage/blob/main/assets/grounded_sam/sam_hq/sam_output.jpg?raw=true) | ![](https://github.com/IDEA-Research/detrex-storage/blob/main/assets/grounded_sam/sam_hq/sam_hq_output.jpg?raw=true) |
+
+</div>
+
+**Step 4: Runing the updated grounded-sam demo (optional)**
+
 Note that this demo is almost same as the original demo, but **with more elegant code**.
 
 ```python
@@ -318,7 +370,6 @@ The annotated results will be saved as `./groundingdino_annotated_image.jpg` and
 | `Horse. Clouds. Grasses. Sky. Hill` | ![](./assets/demo7.jpg) | ![](assets/groundingdino_annotated_image.jpg) | ![](assets/grounded_sam_annotated_image.jpg) |
 
 </div>
-
 
 ### :skier: Grounded-SAM with Inpainting: Detect, Segment and Generate Everything with Text Prompt
 
@@ -381,10 +432,11 @@ python gradio_app.py
 ![](./assets/gradio_demo.png)
 
 
-### :label: Grounded-SAM with Tag2Text for Automatic Labeling
-Tag2Text achieves superior image tag recognition ability of [**3,429**](https://github.com/xinyu1205/Tag2Text/blob/main/data/tag_list.txt) commonly human-used categories.
+### :label: Grounded-SAM with RAM or Tag2Text for Automatic Labeling
+[**The Recognize Anything Model (RAM) and Tag2Text**](https://github.com/xinyu1205/Recognize_Anything-Tag2Text) exhibits **exceptional recognition abilities**, in terms of **both accuracy and scope**.
+
 It is seamlessly linked to generate pseudo labels automatically as follows:
-1. Use Tag2Text to generate tags.
+1. Use RAM/Tag2Text to generate tags.
 2. Use Grounded-Segment-Anything to generate the boxes and masks.
 
 
@@ -398,17 +450,35 @@ git submodule init
 git submodule update
 ```
 
-- Download pretrained weights for `GroundingDINO`, `SAM` and `Tag2Text`:
+- Download pretrained weights for `GroundingDINO`, `SAM` and `RAM/Tag2Text`:
 
 ```bash
 wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
 wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
 
 cd Tag2Text
+wget https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/ram_swin_large_14m.pth
 wget https://huggingface.co/spaces/xinyu1205/Tag2Text/resolve/main/tag2text_swin_14m.pth
 ```
 
-**Step 2: Runing the demo**
+**Step 2: Runing the demo with RAM**
+```bash
+export CUDA_VISIBLE_DEVICES=0
+python automatic_label_ram_demo.py \
+  --config GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py \
+  --ram_checkpoint ./Tag2Text/ram_swin_large_14m.pth \
+  --grounded_checkpoint groundingdino_swint_ogc.pth \
+  --sam_checkpoint sam_vit_h_4b8939.pth \
+  --input_image assets/demo9.jpg \
+  --output_dir "outputs" \
+  --box_threshold 0.25 \
+  --text_threshold 0.2 \
+  --iou_threshold 0.5 \
+  --device "cuda"
+```
+
+
+**Step 2: Or Runing the demo with Tag2Text**
 ```bash
 export CUDA_VISIBLE_DEVICES=0
 python automatic_label_tag2text_demo.py \
@@ -427,7 +497,7 @@ python automatic_label_tag2text_demo.py \
 - Tag2Text also provides powerful captioning capabilities, and the process with captions can refer to [BLIP](#robot-run-grounded-segment-anything--blip-demo).
 - The pseudo labels and model prediction visualization will be saved in `output_dir` as follows (right figure):
 
-![](./assets/automatic_label_output/demo9_tag2text.jpg)
+![](./assets/automatic_label_output/demo9_tag2text_ram.jpg)
 
 
 ### :robot: Grounded-SAM with BLIP for Automatic Labeling

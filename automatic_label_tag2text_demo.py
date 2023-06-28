@@ -7,7 +7,6 @@ import json
 import torch
 import torchvision
 from PIL import Image, ImageDraw, ImageFont
-import nltk
 
 # Grounding DINO
 import GroundingDINO.groundingdino.datasets.transforms as T
@@ -26,7 +25,7 @@ import matplotlib.pyplot as plt
 import sys
 sys.path.append('Tag2Text')
 from Tag2Text.models import tag2text
-from Tag2Text import inference
+from Tag2Text import inference_tag2text
 import torchvision.transforms as TS
 
 # ChatGPT or nltk is required when using captions
@@ -289,7 +288,7 @@ if __name__ == "__main__":
                     (384, 384))
     raw_image  = transform(raw_image).unsqueeze(0).to(device)
 
-    res = inference.inference(raw_image , tag2text_model, specified_tags)
+    res = inference_tag2text.inference(raw_image , tag2text_model, specified_tags)
 
     # Currently ", " is better for detecting single tags
     # while ". " is a little worse in some case
